@@ -2,8 +2,8 @@ import Container from "../shared/Container";
 import logo from "../../assets/icon.png";
 import NavItem from "../shared/NavItem";
 import BtnLink from "../shared/BtnLink";
-import { CiLight } from "react-icons/ci";
-import { MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { useThemeStore } from "../../stores/ThemeStore";
 
 const navItems = [
   { href: "#", text: "Home" },
@@ -13,6 +13,8 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const { toggleTheme, theme } = useThemeStore();
+
   return (
     <header className="absolute inset-x-0 top-0 z-50 py-6">
       <Container>
@@ -49,8 +51,15 @@ const Navbar = () => {
             </div>
           </div>
           <div className="min-w-max flex items-center gap-x-3">
-            <button className="outline-hidden flex relative rounded-full p-2 lg:p-3 border border-box-border cursor-pointer">
-              <MdOutlineLightMode size={26} />
+            <button
+              onClick={toggleTheme}
+              className="outline-hidden flex relative rounded-full p-2 lg:p-3 border border-box-border cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <MdOutlineDarkMode size={26} className="text-heading-1" />
+              ) : (
+                <MdOutlineLightMode size={26} className="text-heading-1" />
+              )}
             </button>
           </div>
         </nav>
