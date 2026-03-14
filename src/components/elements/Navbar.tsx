@@ -1,5 +1,5 @@
 import Container from "../shared/Container";
-import logo from "../../assets/icon.png";
+import logo from "../../../public/assets/icon.png";
 import NavItem from "../shared/NavItem";
 import BtnLink from "../shared/BtnLink";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
