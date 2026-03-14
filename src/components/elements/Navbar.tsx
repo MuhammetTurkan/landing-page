@@ -5,7 +5,7 @@ import BtnLink from "../shared/BtnLink";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { useThemeStore } from "../../stores/ThemeStore";
 
-const navItems = [
+export const navItems = [
   { href: "#", text: "Home" },
   { href: "#services", text: "Services" },
   { href: "#about-us", text: "About Us" },
